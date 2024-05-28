@@ -1,7 +1,8 @@
 package id.co.sisteminformasiakreditasibackend.rest;
 
+
 import id.co.sisteminformasiakreditasibackend.config.EncodeData;
-import id.co.sisteminformasiakreditasibackend.service.DosenTidakTetapService;
+import id.co.sisteminformasiakreditasibackend.service.DosenTAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,22 +13,26 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
-public class DosenTidaktetapRest {
+public class DosenTARest {
 
     @Autowired
-    private DosenTidakTetapService dosenTidakTetapService;
+    private DosenTAService dosenTAService;
 
     @Autowired
     private EncodeData encodeData;
 
-    @PostMapping("/getDosenTidaktetap")
-    public ResponseEntity<String> getDosenTidaktetap(@RequestBody Map<String, Object> data) {
+
+    @PostMapping("/getDosenTA")
+    public ResponseEntity<String> getDosenTA(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
-            String result = dosenTidakTetapService.getDosenTidaktetap(encodedData);
+            String result = dosenTAService.getDosenTA(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to get data", e);
         }
     }
 }
+
+
+

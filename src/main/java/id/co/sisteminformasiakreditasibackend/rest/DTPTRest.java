@@ -12,7 +12,6 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/DTPT")
 public class DTPTRest {
 
     @Autowired

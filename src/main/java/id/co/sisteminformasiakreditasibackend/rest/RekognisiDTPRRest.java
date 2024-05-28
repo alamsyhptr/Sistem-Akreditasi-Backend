@@ -12,7 +12,6 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/Rekognisi")
 public class RekognisiDTPRRest {
     @Autowired
     private RekognisiDTPRService rekognisiDTPRService;
