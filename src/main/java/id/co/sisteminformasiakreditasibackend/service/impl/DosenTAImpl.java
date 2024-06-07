@@ -4,8 +4,8 @@ import id.co.sisteminformasiakreditasibackend.repository.PolmanAstraRepository;
 import id.co.sisteminformasiakreditasibackend.service.DosenTAService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,12 +18,12 @@ public class DosenTAImpl implements DosenTAService {
     PolmanAstraRepository polmanAstraRepository;
 
     @Override
-    public String getDosenTA(Map<String, Object> data){
+    public String getDataDosenTA(Map<String, Object> data){
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("akd_getDosenTA", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("akd_GetDosenTA", dataList.toArray(new String[0]));
         return result;
     }
 }

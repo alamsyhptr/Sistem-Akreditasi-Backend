@@ -17,9 +17,8 @@ public class RekognisiDTPRImpl implements RekognisiDTPRService {
     @Autowired
     PolmanAstraRepository polmanAstraRepository;
 
-
     @Override
-    public String getRekognisiDTPR(Map<String, Object> data) {
+    public String getDataRekognisiDTPR(Map<String, Object> data) {
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());

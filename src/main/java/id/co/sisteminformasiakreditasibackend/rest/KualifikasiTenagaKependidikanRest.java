@@ -1,7 +1,6 @@
 package id.co.sisteminformasiakreditasibackend.rest;
 
 import id.co.sisteminformasiakreditasibackend.config.EncodeData;
-import id.co.sisteminformasiakreditasibackend.service.DTPTService;
 import id.co.sisteminformasiakreditasibackend.service.KualifikasiTenagaKependidikanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,10 +21,10 @@ public class KualifikasiTenagaKependidikanRest {
     private EncodeData encodeData;
 
     @PostMapping("/getKualifikasiKependidikan")
-    public ResponseEntity<String> getDTPT(@RequestBody Map<String, Object> data) {
+    public ResponseEntity<String> getDataKualifikasiKependidikan(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
-            String result = kualifikasiTenagaKependidikanService.getKualifikasiKependidikan(encodedData);
+            String result = kualifikasiTenagaKependidikanService.getDataKualifikasiKependidikan(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to get data", e);

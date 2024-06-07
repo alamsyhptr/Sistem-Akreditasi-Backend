@@ -12,6 +12,7 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/api/RekognisiDTPR")
 public class RekognisiDTPRRest {
     @Autowired
     private RekognisiDTPRService rekognisiDTPRService;
@@ -23,7 +24,7 @@ public class RekognisiDTPRRest {
     public ResponseEntity<String> getRekognisiDTPR(@RequestBody Map<String, Object> data) {
         try {
             Map<String, Object> encodedData = encodeData.htmlEncodeObject(data);
-            String result = rekognisiDTPRService.getRekognisiDTPR(encodedData);
+            String result = rekognisiDTPRService.getDataRekognisiDTPR(encodedData);
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Failed to get data", e);

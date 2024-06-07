@@ -14,12 +14,11 @@ import java.util.Map;
 @Transactional
 public class DosenTidakTetapImpl implements DosenTidakTetapService {
 
-
     @Autowired
     PolmanAstraRepository polmanAstraRepository;
 
     @Override
-    public String getDosenTidaktetap(Map<String, Object> data) {
+    public String getDataDosenTidaktetap(Map<String, Object> data) {
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());

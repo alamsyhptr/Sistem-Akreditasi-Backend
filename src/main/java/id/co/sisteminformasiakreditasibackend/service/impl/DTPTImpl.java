@@ -4,8 +4,8 @@ import id.co.sisteminformasiakreditasibackend.repository.PolmanAstraRepository;
 import id.co.sisteminformasiakreditasibackend.service.DTPTService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +18,7 @@ public class DTPTImpl implements DTPTService {
     PolmanAstraRepository polmanAstraRepository;
 
     @Override
-    public String getDTPT(Map<String, Object> data){
+    public String getDataDTPT(Map<String, Object> data){
         List<String> dataList = new ArrayList<>();
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());

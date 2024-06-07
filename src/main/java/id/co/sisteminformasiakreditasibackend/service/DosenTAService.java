@@ -4,5 +4,5 @@ import java.util.Map;
 
 public interface DosenTAService {
 
-    String getDosenTA(Map<String, Object> data);
+    String getDataDosenTA(Map<String, Object> data);
 }

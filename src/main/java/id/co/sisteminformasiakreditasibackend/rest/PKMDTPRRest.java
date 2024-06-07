@@ -12,6 +12,7 @@ import java.util.Map;
 
 @CrossOrigin
 @RestController
+@RequestMapping("/api/PKMDTPR")
 public class PKMDTPRRest {
     @Autowired
     private PKMDTPRService pkmdtprService;
