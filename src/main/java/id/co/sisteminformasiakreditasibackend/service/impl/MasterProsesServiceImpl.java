@@ -62,7 +62,7 @@ public class MasterProsesServiceImpl implements MasterProsesService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("pro_editProses", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure(    "pro_editProses", dataList.toArray(new String[0]));
         return result;
     }
 

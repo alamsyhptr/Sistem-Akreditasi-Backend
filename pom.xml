@@ -70,6 +70,11 @@
             <artifactId>spring-context</artifactId>
             <version>6.1.8</version>
         </dependency>
+        <dependency>
+            <groupId>id.co</groupId>
+            <artifactId>Sistem-Informasi-Akreditasi-Backend</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

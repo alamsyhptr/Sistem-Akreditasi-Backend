@@ -22,7 +22,7 @@ public class EWMPDosenTetapServiceImpl implements EWMPDosenTetapService {
         for (Map.Entry<String, Object> entry : data.entrySet()) {
             dataList.add(entry.getValue().toString());
         }
-        String result = polmanAstraRepository.callProcedure("akd_EWMPDosenTetap", dataList.toArray(new String[0]));
+        String result = polmanAstraRepository.callProcedure("akd_EWMP", dataList.toArray(new String[0]));
         return result;
     }
 }
